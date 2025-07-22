@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Persona Generator</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <h1>🧠 AI Persona Generator</h1>
+
+  <div class="section">
+    <label>🔑 OpenAI API Key:</label>
+    <input type="password" id="apiKeyInput" placeholder="Введи API ключ">
+
+    <label>🤖 Модель:</label>
+    <input type="text" id="modelInput" value="gpt-4">
+
+    <label>🧬 Ім’я персонажа:</label>
+    <input type="text" id="personaName">
+
+    <label>🎭 Роль/функція:</label>
+    <input type="text" id="personaRole">
+
+    <label>🎙️ Манера мовлення / стиль:</label>
+    <input type="text" id="personaStyle">
+
+    <label>🧾 Опис ідей / контекст:</label>
+    <textarea id="customDescription" rows="3"></textarea>
+
+    <label>📜 Базовий промпт (з шаблоном):</label>
+    <textarea id="basePrompt" rows="4">
+Сгенеруй повний YAML профіль унікальної особистості на ім’я {{name}}, яка виконує функцію {{role}}.
+Стиль поведінки/мовлення: {{style}}.
+Опис/контекст: {{desc}}.
+Профіль має включати: характер, мову, стиль взаємодії, бекграунд, слабкості, фразочки, цікаві риси, мету, тематику тощо.
+    </textarea>
+
+    <button onclick="generatePersona()">⚡ Згенерувати персонажа</button>
+  </div>
+
+  <div class="section">
+    <label>📄 Згенерований YAML профіль:</label>
+    <textarea id="generatedOutput" rows="20"></textarea>
+  </div>
+
+  <div class="section">
+    <h2>Аватар</h2>
+    <button onclick="generateAvatar()">🎨 Згенерувати аватар</button>
+    <p id="avatarStatus"></p>
+    <img id="avatarImage" src="" alt="Avatar will appear here" style="max-width: 300px; margin-top: 10px;" />
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
